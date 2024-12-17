@@ -58,11 +58,22 @@ AXI FSM Diagram
 AHB FSM Diagram
 
 ![AHB_FSM_Diagram](https://github.com/user-attachments/assets/9e09b06d-2f81-417f-8466-08187baf8ac0)
+
+Running the code:
+
+    The project is created in Vivado 2019.1
+
+    FIFO IP is generated with depth 64 and data_width 36 (32 for data and 4 for strobes) can be configured as per use case
+
+    Code are highly commented that explain each logic in details
     
 Contributions:
 This project is open for contributions. I encourage:
+
     Suggestions for improvement.
+    
     Bug reporting and fixes.
+    
     Design scalability feedback.
 
 Reach out to me at: wadoodalam44@gmail.com
