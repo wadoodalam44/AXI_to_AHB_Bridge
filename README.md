@@ -61,11 +61,20 @@ AHB FSM Diagram
 
 ![AHB_FSM_Diagram](https://github.com/user-attachments/assets/9e09b06d-2f81-417f-8466-08187baf8ac0)
 
-Running the Code:
+Code:
 
     The project is created in Vivado 2019.1
 
-    The codes are written in SystemVerilog and are kept in separate directories (RTL and TB)
+    The codes are written in SystemVerilog
+
+    Project contains 3 sv files which are as:
+
+        1) AXI_to_AHB_Bridge.sv: contains the design which has registers counters and both AXI and AHB FSMs it also has instantiation of read and write fifos and arbitor
+
+        2) Arbitor_Read_Write.sv: round robin arbitor FSM is implemented in this file
+
+        3) AXI_to_AHB_Bridge_tb.sv: Simple testbench with single read/write transfers (with OKAY, ERROR and wait states), burst read/write transfer and arbitor testing cases
+    
 
     FIFO IP is generated with depth 64 and data_width 36 (32 for data and 4 for strobes) can be configured as per use case
 
