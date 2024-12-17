@@ -51,6 +51,8 @@ Block Diagram of the Design
 
 Arbitor FSM Diagram
 
+![Uploading Arbiter_FSM_Diagram.jpeg…]()
+
 AXI FSM Diagram
 
 ![AXI_FSM_Diagram](https://github.com/user-attachments/assets/2ba3a978-729c-46a3-b320-ebdd9ddf6e63)
