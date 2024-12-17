@@ -59,13 +59,16 @@ AHB FSM Diagram
 
 ![AHB_FSM_Diagram](https://github.com/user-attachments/assets/9e09b06d-2f81-417f-8466-08187baf8ac0)
 
-Running the code:
+Running the Code:
 
     The project is created in Vivado 2019.1
 
+    The codes are written in SystemVerilog and are kept in separate directories (RTL and TB)
+
     FIFO IP is generated with depth 64 and data_width 36 (32 for data and 4 for strobes) can be configured as per use case
 
-    Code are highly commented that explain each logic in details
+    Code are highly commented that has necessary details of each logic
+
     
 Contributions:
 This project is open for contributions. I encourage:
