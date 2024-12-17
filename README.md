@@ -22,11 +22,17 @@ Design Details:
 
 The AXI2AHB bridge translates transactions from the AXI interface into the AHB protocol. It monitors the AXI channels (AW, W, AR, R, and B) and converts them into corresponding AHB Address and Data Phases.
 Key Components
+
     Arbitor FSM: Handles parallel read and write from AXI and start transaction by triggering AXI FSM in read or write mode in round robin passion
+    
     AXI Write FSM: Handles read and write data of AXI channels
+    
     AHB Write FSM: Generates AHB write and read transactions based on control signals coming from AXI FSM (Mapping of AXI transaction to an equivalent AHB Transfer)
+    
     Synchronization Logic: Ensures proper handshaking between AXI and AHB protocols.
+    
     Registers: Hold transaction control information for whole transaction such as (AWBURST,AWLEN,AWSIZE,AWADDR), (ARBURST,ARLEN,ARSIZE,ARADDR) and (HRESP)
+    
     FIFOs: Stors incoming data from W channel of AXI incase of writing and RDATA coming from AHB incase of reading (I have used Xilinx IP for read and write FIFOs and are configured of 32 bit data, 32 bit address and 4            bit strob, however it can be reconfigured in vivado for any use case)
     
 Block Diagram of the Design
@@ -36,9 +42,11 @@ Block Diagram of the Design
 Arbitor FSM Diagram
 
 AXI FSM Diagram
+
 ![AXI_FSM_Diagram](https://github.com/user-attachments/assets/2ba3a978-729c-46a3-b320-ebdd9ddf6e63)
 
 AHB FSM Diagram
+
 ![AHB_FSM_Diagram](https://github.com/user-attachments/assets/9e09b06d-2f81-417f-8466-08187baf8ac0)
     
 Contributions:
