@@ -1,2 +1,40 @@
-# AXI_to_AHB_Bridge
-This is a bridge
+![WhatsApp Image 2024-12-14 at 7 43 12 PM](https://github.com/user-attachments/assets/540bc974-39e5-4ff8-b602-8a801be1bd90)# AXI_to_AHB_Bridge
+Overview:
+The AXI to AHB Bridge is an open-source project that enables seamless communication between high-speed, high-bandwidth AXI masters (e.g., processors and controllers) and low-speed, low-bandwidth AHB slaves (e.g., memories and peripherals). This bridge is particularly useful in heterogeneous SoCs where AXI and AHB-compatible masters and slaves coexist.
+The design is scalable, easy to integrate, and optimized for efficient protocol conversion.
+
+Features:
+    Supports high-speed AXI masters and low-speed AHB slaves.
+    Supports single transfers and burts (fixed, incrementing and wrappinp)
+    Ensure readiness of masters and slave (handles corner cases such as slave busy, master stop sending or recieving data during transaction)
+    Enables integration in heterogeneous SoCs with AXI/AHB protocol interfaces.
+    Arbitrate in a round robin passion between AXI write and read channels.
+    Scalable architecture for various system requirements.
+    Open-source contribution, open to feedback and suggestions.
+    
+
+Use Cases:
+    Heterogeneous SoCs: Seamless communication between different protocol-compatible masters and slaves.
+    Performance Optimization: Ideal for scenarios with high-performance AXI systems communicating with lower-speed peripherals.
+    System Integration: Suitable for mixed protocol designs in embedded systems.
+
+Design Details:
+The AXI2AHB bridge translates transactions from the AXI interface into the AHB protocol. It monitors the AXI channels (AW, W, AR, R, and B) and converts them into corresponding AHB Address and Data Phases.
+Key Components
+    Arbitor FSM: Handles parallel read and write from AXI and start transaction by triggering AXI FSM in read or write mode in round robin passion
+    AXI Write FSM: Handles read and write data of AXI channels
+    AHB Write FSM: Generates AHB write and read transactions based on control signals coming from AXI FSM (Mapping of AXI transaction to an equivalent AHB Transfer)
+    Synchronization Logic: Ensures proper handshaking between AXI and AHB protocols.
+    Registers: Hold transaction control information for whole transaction such as (AWBURST,AWLEN,AWSIZE,AWADDR), (ARBURST,ARLEN,ARSIZE,ARADDR) and (HRESP)
+    FIFOs: Stors incoming data from W channel of AXI incase of writing and RDATA coming from AHB incase of reading (I have used Xilinx IP for read and write FIFOs and are configured of 32 bit data, 32 bit address and 4            bit strob, however it can be reconfigured in vivado for any use case)
+Block Diagram of the Design
+
+
+    
+Contributions:
+This project is open for contributions. I encourage:
+    Suggestions for improvement.
+    Bug reporting and fixes.
+    Design scalability feedback.
+
+Reach out to me at: wadoodalam44@gmail.com
