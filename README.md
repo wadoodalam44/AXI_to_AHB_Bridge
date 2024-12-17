@@ -4,12 +4,19 @@ The AXI to AHB Bridge is an open-source project that enables seamless communicat
 The design is scalable, easy to integrate, and optimized for efficient protocol conversion.
 
 Features:
+
     Supports high-speed AXI masters and low-speed AHB slaves.
+    
     Supports single transfers and burts (fixed, incrementing and wrappinp)
+
     Ensure readiness of masters and slave (handles corner cases such as slave busy, master stop sending or recieving data during transaction)
+    
     Enables integration in heterogeneous SoCs with AXI/AHB protocol interfaces.
+    
     Arbitrate in a round robin passion between AXI write and read channels.
+    
     Scalable architecture for various system requirements.
+    
     Open-source contribution, open to feedback and suggestions.
     
 
