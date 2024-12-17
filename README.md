@@ -21,8 +21,11 @@ Features:
     
 
 Use Cases:
+
     Heterogeneous SoCs: Seamless communication between different protocol-compatible masters and slaves.
+    
     Performance Optimization: Ideal for scenarios with high-performance AXI systems communicating with lower-speed peripherals.
+    
     System Integration: Suitable for mixed protocol designs in embedded systems.
 
 Design Details:
