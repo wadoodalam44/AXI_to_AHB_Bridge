@@ -75,10 +75,11 @@ Code:
 
         3) AXI_to_AHB_Bridge_tb.sv: Simple testbench with single read/write transfers (with OKAY, ERROR and wait states), burst read/write transfer and arbitor testing cases
     
+    The FIFOs that is instantiated in AXI_to_AHB_Bridge.sv are Xilinx IP.
+    FIFO IP is generated with depth 64 and data_width 36 (32 for data and 4 for strobes) can be configured differently as per requirement.
+    If the design is intended for different vendor FPGA or ASIC then an equivalent fifo will be requitred with the signal in instantiation template.
 
-    FIFO IP is generated with depth 64 and data_width 36 (32 for data and 4 for strobes) can be configured as per use case
-
-    Code are highly commented that has necessary details of each logic
+    Code are highly commented and includes all necessary details of each logic
 
     
 Contributions:
